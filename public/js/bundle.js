@@ -183,10 +183,14 @@ var ShareComponent = _react2.default.createClass({
 			"div",
 			{ className: "shareComponent" },
 			_react2.default.createElement("div", { onTouchStart: this.showCover, className: "shareBtn" }),
+			_react2.default.createElement("div", { className: "authors" }),
+			_react2.default.createElement("div", { className: "ewm", onTouchStart: this.stopPropagation }),
 			_react2.default.createElement(_share2.default, { ref: "share" })
 		);
 	},
-	showCover: function showCover() {
+	showCover: function showCover(e) {
+		e.preventDefault();
+		e.stopPropagation();
 		this.refs.share.setState({ isShow: true });
 	}
 });
@@ -199,7 +203,30 @@ exports.default = ShareComponent;
 var React = require('react');
 var Loader = require('preload-ad');
 var Adv = require("ad-ydgf");
-var allImgs = ['http://news.sohu.com/upload/shuzizhidaozzx/public/img/0.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/2.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/3.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/4.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/5.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/6.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/7.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/8.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/9.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/10.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/11.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/mayer.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/number.png', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/bg.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/icons.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n1.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n2.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n3.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n4.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n5.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n6.jpg', 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n7.jpg'];
+var allImgs = ['http://192.168.0.9:8080/img/01.jpg'];
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/2.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/3.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/4.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/5.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/6.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/7.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/8.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/9.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/10.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/11.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/mayer.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/number.png',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/bg.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/icons.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n1.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n2.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n3.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n4.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n5.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n6.jpg',
+// 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n7.jpg'
 var option = {
   Itemspaceid: 12862, //广告ID
   adps: 6401136, // 广告位尺寸
@@ -336,7 +363,7 @@ var App = React.createClass({
       onSlideChangeEnd: function onSlideChangeEnd(swiper) {
         if (swiper.activeIndex != 0 && _this.refs.page1.state.autoplay) {
           _this.refs.page1.setState({ autoplay: false });
-          console.log(swiper.activeIndex);
+          // console.log(swiper.activeIndex);
         }
       }
     });
@@ -382,9 +409,9 @@ module.exports = exports.default = Page1 = _react2.default.createClass({
 			_react2.default.createElement(
 				_reactSlick2.default,
 				settings,
-				_react2.default.createElement('img', { src: './public/img/01.jpg' }),
-				_react2.default.createElement('img', { src: './public/img/02.jpg' }),
-				_react2.default.createElement('img', { src: './public/img/03.jpg' })
+				_react2.default.createElement('img', { src: './img/01.jpg' }),
+				_react2.default.createElement('img', { src: './img/02.jpg' }),
+				_react2.default.createElement('img', { src: './img/03.jpg' })
 			)
 		);
 	},
@@ -493,6 +520,7 @@ var ShareCover = _react2.default.createClass({
 		});
 	},
 	stopPropagation: function stopPropagation(e) {
+		e.preventDefault();
 		e.stopPropagation();
 	},
 	getInitialState: function getInitialState() {
@@ -501,7 +529,6 @@ var ShareCover = _react2.default.createClass({
 		};
 	},
 	render: function render() {
-		// var isShow = {zIndex:this.state.isShow?'10000':'-1'};
 		var isShow = { display: this.state.isShow ? "block" : "none" };
 		var cx = _classNames2.default;
 		var classes = cx({
@@ -512,8 +539,11 @@ var ShareCover = _react2.default.createClass({
 		var shareCover = _react2.default.createElement(
 			'div',
 			{ className: classes, style: isShow, onTouchStart: this.hideCover },
-			_react2.default.createElement('div', { className: 'authors' }),
-			_react2.default.createElement('div', { className: 'ewm', onTouchStart: this.stopPropagation })
+			_react2.default.createElement(
+				'h1',
+				{ className: 'shareFont' },
+				'share'
+			)
 		);
 		return shareCover;
 	}

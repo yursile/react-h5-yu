@@ -15,9 +15,9 @@ module.exports = Page1 = React.createClass({
 	    return (
 	      <div className='container'>
 	        <Slider {...settings}>
-	          <img src='./public/img/01.jpg' />
-	          <img src='./public/img/02.jpg' />
-	          <img src='./public/img/03.jpg' />
+	          <img src='./img/01.jpg' />
+	          <img src='./img/02.jpg' />
+	          <img src='./img/03.jpg' />
 	        </Slider>
 	      </div>
 	    );

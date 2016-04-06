@@ -2,31 +2,32 @@ var React = require('react');
 var Loader = require('preload-ad');
 var Adv = require("ad-ydgf");
 var allImgs = [
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/0.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/2.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/3.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/4.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/5.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/6.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/7.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/8.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/9.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/10.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/11.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/mayer.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/number.png',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/bg.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/icons.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n1.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n2.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n3.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n4.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n5.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n6.jpg',
-              'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n7.jpg'
+              'http://192.168.0.9:8080/img/01.jpg',
+              
               ];
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/2.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/3.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/4.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/5.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/6.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/7.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/8.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/9.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/10.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/11.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/mayer.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/number.png',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/1.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/bg.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/icons.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n1.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n2.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n3.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n4.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n5.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n6.jpg',
+              // 'http://news.sohu.com/upload/shuzizhidaozzx/public/img/n7.jpg'
 var option = {
     Itemspaceid:12862, //广告ID
     adps:6401136,// 广告位尺寸

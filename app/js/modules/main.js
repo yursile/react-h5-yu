@@ -33,7 +33,7 @@ var App = React.createClass({
      onSlideChangeEnd:function(swiper){
       if(swiper.activeIndex!=0&&_this.refs.page1.state.autoplay){
         _this.refs.page1.setState({autoplay:false});
-         console.log(swiper.activeIndex);
+         // console.log(swiper.activeIndex);
       }
      }
     })

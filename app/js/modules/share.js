@@ -8,6 +8,7 @@ var ShareCover = React.createClass({
 	    })
 	},
 	stopPropagation(e){
+		e.preventDefault();
 		e.stopPropagation();
 	},
 	getInitialState(){
@@ -16,7 +17,6 @@ var ShareCover = React.createClass({
 	    }
     },
 	render(){
-		// var isShow = {zIndex:this.state.isShow?'10000':'-1'};
 		var isShow = {display:this.state.isShow?"block":"none"}
 		var cx = ClassNames;
 		var classes = cx({
@@ -26,8 +26,7 @@ var ShareCover = React.createClass({
 		});
 		let shareCover = (
 			<div className={classes} style={isShow}  onTouchStart={this.hideCover}>
-				<div className="authors"></div>
-				<div className="ewm" onTouchStart={this.stopPropagation}></div>
+				<h1 className="shareFont">share</h1>
 			</div>
 		)
 		return shareCover;
